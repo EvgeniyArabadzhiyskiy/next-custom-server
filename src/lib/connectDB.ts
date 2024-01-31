@@ -6,6 +6,9 @@ dotenv.config({
   path: path.resolve(__dirname, "../../.env"),
 });
 
+const MONGODB_URL =
+  "mongodb+srv://Evgeniy:aveo4292@cluster0.2xg3aur.mongodb.net/next-server?retryWrites=true&w=majority";
+
 // const MONGODB_URL = process.env.MONGODB_URL
 
 // if (!MONGODB_URL) {
@@ -38,7 +41,7 @@ export const connectDB = async () => {
   // return cached.conn;
 
   try {
-    await mongoose.connect(process.env.MONGODB_URL || "");
+    await mongoose.connect(MONGODB_URL);
     // console.log("Database connected");
   } catch (error) {
     console.log(error);
