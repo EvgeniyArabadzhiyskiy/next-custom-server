@@ -29,7 +29,7 @@ export default function Home() {
   //   })()
   // },[])
 
-  const { data } = trpc.myRoute.useQuery(undefined, {
+  const { data } = trpc.getUsers.useQuery(undefined, {
     staleTime: Infinity,
     refetchOnWindowFocus: false
   });
