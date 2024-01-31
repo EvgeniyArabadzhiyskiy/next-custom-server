@@ -41,7 +41,7 @@ export const connectDB = async () => {
   // return cached.conn;
 
   try {
-    await mongoose.connect(MONGODB_URL);
+    await mongoose.connect(process.env.MONGODB_URL || "");
     // console.log("Database connected");
   } catch (error) {
     console.log(error);
