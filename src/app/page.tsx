@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("http://localhost:3000/api/trpc/user")
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/trpc/user`)
       const data = await res.json()
       console.log("USER_Data:", data);
 
