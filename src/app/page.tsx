@@ -5,17 +5,22 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("http://localhost:3000//api/some-route/user")
-      const data = await res.json()
-      console.log("USER_Data:", data);
 
-    })()
-  },[])
+  const sss = process.env.NEXT_PUBLIC_SERVER_URL
+  console.log("Home  sss:", sss);
+
+  
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await fetch("http://localhost:3000//api/some-route/user")
+  //     const data = await res.json()
+  //     console.log("USER_Data:", data);
+
+  //   })()
+  // },[])
 
   const { data } = trpc.myRoute.useQuery();
-  // console.log("Home  data:", data);
+  console.log("Home  data:", data);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
