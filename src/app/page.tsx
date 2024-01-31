@@ -6,8 +6,8 @@ import { useEffect } from "react";
 
 export default function Home() {
 
-  const sss = process.env.NEXT_PUBLIC_SERVER_URL
-  console.log("Home  sss:", sss);
+  // const sss = process.env.NEXT_PUBLIC_SERVER_URL
+  // console.log("Home  sss:", sss);
 
   
   // useEffect(() => {

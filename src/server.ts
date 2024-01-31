@@ -9,7 +9,6 @@ import { inferAsyncReturnType } from "@trpc/server";
 import { appRouter } from "./trpc";
 import { connectDB } from "./lib/connectDB";
 
-
 const server = express();
 
 const userRouter = express.Router();
@@ -49,26 +48,26 @@ const start = async () => {
     server.listen(PORT, async () => {
       // @ts-expect-error
       await nextBuild(path.join(__dirname, "../"));
-      
+
       process.exit();
     });
-    
+
     return;
   }
-  
+
   server.use("/api/some-route", userRouter);
-  
+
   server.use(
     "/api/trpc",
     trpcExpress.createExpressMiddleware({
       router: appRouter,
       createContext,
     })
-    );
-    
-    server.use((req, res) => nextHandler(req, res));
-    
-    nextApp
+  );
+
+  server.use((req, res) => nextHandler(req, res));
+
+  nextApp
     .prepare()
     .then(() => {
       server.listen(PORT, () => {
@@ -79,26 +78,31 @@ const start = async () => {
       console.error(ex.stack);
       process.exit(1);
     });
-  };
-  
-  start();
-  
-  
-  //   /api/some-route/user
-  
-  // mongoose
-  //   .connect(process.env.MONGODB_URL || "")
-  //   .then(() => {
-    //     console.log("Database connection successful");
-    //   })
-    //   .catch((error) => {
-      //     console.log(error.message);
-      //     process.exit(1);
-      //   });
-      
-      // "scripts": {
-        //   "dev": "cross-env NODE_ENV=development nodemon",
-        //   "build": "next build",
-        //   "start": "node server.ts",
-        //   "lint": "next lint"
-        // },
+};
+
+// start();
+
+//   /api/some-route/user
+
+// mongoose
+//   .connect(process.env.MONGODB_URL || "")
+//   .then(() => {
+//     console.log("Database connection successful");
+//   })
+//   .catch((error) => {
+//     console.log(error.message);
+//     process.exit(1);
+//   });
+
+// "scripts": {
+//   "dev": "cross-env NODE_ENV=development nodemon",
+//   "build": "next build",
+//   "start": "node server.ts",
+//   "lint": "next lint"
+// },
+
+// "build:server": "tsc --project tsconfig.server.json",
+//     "build:next": "cross-env NEXT_BUILD=true node dist/server.js",
+//     "build": "cross-env NODE_ENV=production npm run build:server && npm run copyfiles && npm run build:next",
+//     "start": "cross-env NODE_ENV=production node dist/server.js",
+//     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",

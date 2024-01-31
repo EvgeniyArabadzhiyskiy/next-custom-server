@@ -3,12 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon",
-    "build:server": "tsc --project tsconfig.server.json",
-    "build:next": "cross-env NEXT_BUILD=true node dist/server.js",
-    "build": "cross-env NODE_ENV=production npm run build:server && npm run copyfiles && npm run build:next",
-    "start": "cross-env NODE_ENV=production node dist/server.js",
-    "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
