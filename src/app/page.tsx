@@ -7,12 +7,12 @@ import { useEffect } from "react";
 
 export default function Home() {
 
-  // const sss = process.env.NEXT_PUBLIC_SERVER_URL
-  // console.log("Home  sss:", sss);
+  const sss = process.env.NEXT_PUBLIC_SERVER_URL
+  console.log("Home  sss:", sss);
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`/api/greet`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/greet`)
       // console.log("res:", res);
       const data = await res.json()
       console.log("USER_Data:", data);
