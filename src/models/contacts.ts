@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, models } from "mongoose";
 // const { ObjectId } = require("mongoose").Types;
 
 const contactSchema = new Schema(
@@ -15,4 +15,4 @@ const contactSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-export const Contact = model("contact", contactSchema);
+export const Contact = models.Contact || model("Contact", contactSchema);

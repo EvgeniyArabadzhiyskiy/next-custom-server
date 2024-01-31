@@ -1,15 +1,8 @@
-import { connectDB } from "@/lib/connectDB";
-import { Contact } from "@/models/contacts";
 import { NextResponse, type NextRequest } from "next/server";
-// import mongoose from 'mongoose';
+import { connectDB } from "../../../lib/connectDB";
+import { Contact } from "../../../models/contacts";
 
 export async function GET(req: NextRequest) {
-  console.log("TEST)))))))))()((((");
-  // const requestHeaders = new Headers(req.headers)
-  // console.log("handler  headers::::::::::::::::", requestHeaders.get('cache-control'));
-
-  const url = req.url;
-
   //   const newContact = {
   //     name: "Petr",
   //     age: 21,
@@ -18,10 +11,8 @@ export async function GET(req: NextRequest) {
   //   const contact = await Contact.create(newContact);
   //   console.log("GET  contact:", contact);
 
-  
+  await connectDB();
+  const contacts = await Contact.find();
 
-  // connectDB()
-  // const contasts = await Contact.find()
-
-  return NextResponse.json({ contasts: 'contasts' });
+  return NextResponse.json({ contacts: contacts });
 }
