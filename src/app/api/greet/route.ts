@@ -1,3 +1,4 @@
+import { connectDB } from "@/lib/connectDB";
 import { Contact } from "@/models/contacts";
 import { NextResponse, type NextRequest } from "next/server";
 // import mongoose from 'mongoose';
@@ -17,5 +18,8 @@ export async function GET(req: NextRequest) {
   //   const contact = await Contact.create(newContact);
   //   console.log("GET  contact:", contact);
 
-  return NextResponse.json({ data: "contact" });
+  connectDB()
+  const contasts = await Contact.find()
+
+  return NextResponse.json({ contasts: contasts });
 }
