@@ -7,13 +7,12 @@ import { useEffect } from "react";
 
 export default function Home() {
 
-  const sss = process.env.NEXT_PUBLIC_SERVER_URL
-  console.log("Home  sss:", sss);
+  // const sss = process.env.NEXT_PUBLIC_SERVER_URL
+  // console.log("Home  sss:", sss);
 
   useEffect(() => {
     (async () => {
       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/greet`)
-      // console.log("res:", res);
       const data = await res.json()
       console.log("USER_Data:", data);
 
@@ -30,8 +29,8 @@ export default function Home() {
   //   })()
   // },[])
 
-  // const { data } = trpc.myRoute.useQuery();
-  // console.log("Home  data:", data);
+  const { data } = trpc.myRoute.useQuery();
+  console.log("Home  data:", data);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
