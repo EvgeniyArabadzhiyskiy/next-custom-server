@@ -18,6 +18,8 @@ export async function GET(req: NextRequest) {
   //   const contact = await Contact.create(newContact);
   //   console.log("GET  contact:", contact);
 
+  
+
   // connectDB()
   // const contasts = await Contact.find()
 
