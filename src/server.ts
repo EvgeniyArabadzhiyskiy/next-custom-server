@@ -80,19 +80,11 @@ const start = async () => {
     });
 };
 
-// start();
+start();
 
 //   /api/some-route/user
 
-// mongoose
-//   .connect(process.env.MONGODB_URL || "")
-//   .then(() => {
-//     console.log("Database connection successful");
-//   })
-//   .catch((error) => {
-//     console.log(error.message);
-//     process.exit(1);
-//   });
+
 
 // "scripts": {
 //   "dev": "cross-env NODE_ENV=development nodemon",
@@ -102,7 +94,7 @@ const start = async () => {
 // },
 
 // "build:server": "tsc --project tsconfig.server.json",
-//     "build:next": "cross-env NEXT_BUILD=true node dist/server.js",
-//     "build": "cross-env NODE_ENV=production npm run build:server && npm run copyfiles && npm run build:next",
-//     "start": "cross-env NODE_ENV=production node dist/server.js",
-//     "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
+// "build:next": "cross-env NEXT_BUILD=true node dist/server.js",
+// "build": "cross-env NODE_ENV=production npm run build:server && npm run copyfiles && npm run build:next",
+// "start": "cross-env NODE_ENV=production node dist/server.js",
+// "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",

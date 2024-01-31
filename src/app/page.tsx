@@ -29,7 +29,10 @@ export default function Home() {
   //   })()
   // },[])
 
-  const { data } = trpc.myRoute.useQuery();
+  const { data } = trpc.myRoute.useQuery(undefined, {
+    staleTime: Infinity,
+    refetchOnWindowFocus: false
+  });
   console.log("Home  data:", data);
 
   return (
