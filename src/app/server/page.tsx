@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const getContact = async () => {
   await connectDB();
+  
 
   const contacts = await Contact.find();
   return contacts
