@@ -7,10 +7,10 @@ const getContact = async () => {
   // const data = await res.json();
   // return data;
 
-  await connectDB();
+  await connectDB(); // Напряму запрос из Database
   const contacts = await Contact.find();
 
-  return contacts
+  return contacts;
 };
 
 const Server = async () => {
@@ -20,7 +20,13 @@ const Server = async () => {
   return (
     <>
       <Link href={"/"}>Home</Link>
-      <h1>{name}</h1>
+      {contacts.map((contact) => {
+        return (
+          <li key={contact.name}>
+            <h1>{contact.name}</h1>
+          </li>
+        );
+      })}
     </>
   );
 };
