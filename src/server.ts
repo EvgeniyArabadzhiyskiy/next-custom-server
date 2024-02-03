@@ -87,12 +87,15 @@ start();
 
 
 // "scripts": {
+//   "dev": "next dev",
 //   "dev": "cross-env NODE_ENV=development nodemon",
 //   "build": "next build",
 //   "start": "node server.ts",
 //   "lint": "next lint"
 // },
 
+
+// "dev": "cross-env NODE_ENV=development nodemon",
 // "build:server": "tsc --project tsconfig.server.json",
 // "build:next": "cross-env NEXT_BUILD=true node dist/server.js",
 // "build": "cross-env NODE_ENV=production npm run build:server && npm run copyfiles && npm run build:next",
