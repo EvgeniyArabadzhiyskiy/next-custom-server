@@ -12,6 +12,7 @@ import { connectDB } from "./lib/connectDB";
 const server = express();
 
 const userRouter = express.Router();
+
 userRouter.get("/user", async (req, res) => {
   res.json({
     status: "success",
@@ -20,6 +21,10 @@ userRouter.get("/user", async (req, res) => {
       age: 30,
       city: "Dnepr",
     },
+    technologies: {
+      frontend: ["React", "Next"],
+      backend: ["Express", "mongoDB"]
+    }
   });
 });
 
