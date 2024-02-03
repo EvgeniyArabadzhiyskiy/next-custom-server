@@ -22,7 +22,7 @@ userRouter.get("/user", async (req, res) => {
       city: "Dnepr",
     },
     technologies: {
-      frontend: ["React", "Next"],
+      frontend: ["React", "Next", "HTML", "CSS"],
       backend: ["Express", "mongoDB"]
     }
   });
