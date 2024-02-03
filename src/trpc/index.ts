@@ -1,5 +1,5 @@
-import { connectDB } from "@/lib/connectDB";
-import { Contact } from "@/models/contacts";
+import { connectDB } from "../lib/connectDB";
+import { Contact } from "../models/contacts";
 import { publicProcedure, router } from "./trpc";
 
 interface IData {
